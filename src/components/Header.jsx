@@ -1,10 +1,10 @@
 "use client"
 import { useEffect, useState } from "react"
 import Link from "next/link";
-import Image from "next/image";
 import { RiWhatsappFill } from "react-icons/ri";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
+import Image from "next/image";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 
@@ -38,7 +38,7 @@ export default function Header() {
         >
           <div className="h-10 w-auto flex items-center">
             <Link href={RESUME_URL}>
-              MS.
+              <Image src="/icon.svg" alt="MS" width={36} height={36} className="h-9 w-9" />
             </Link>
           </div>
 

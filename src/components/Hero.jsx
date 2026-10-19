@@ -2,7 +2,8 @@ import { ArrowDown, Download, Mail } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
 
-const RESUME_NAME = "Oluwatunmise-Matthew-Salam-CV.pdf";
+const DOC_ID = "PASTE_YOUR_GOOGLE_DOC_ID_HERE";
+const RESUME_URL = `https://docs.google.com/document/d/1JjZCE1Xg0f0MleQbNomuqiRxMiw2KqE5ChLig2RxLXU/export?format=pdf`;
 
 export default function Hero() {
   return (
@@ -50,8 +51,9 @@ export default function Hero() {
           View My Work
         </a>
         <a
-          href="/resume.pdf"
-          download={RESUME_NAME}
+          href={RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="glass inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold"
         >
           <Download size={18} />
