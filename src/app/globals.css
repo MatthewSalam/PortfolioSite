@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* Make every dark: class follow the .dark class (set by the toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Theme tokens ---------- */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+
+  --glass-bg: rgba(0, 0, 0, 0.04);
+  --glass-bg-hover: rgba(0, 0, 0, 0.08);
+  --glass-border: rgba(0, 0, 0, 0.14);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+  --glass-shadow: rgba(0, 0, 0, 0.12);
+  --top-glow-color: rgba(0, 0, 0, 0.1);
+
+  --card-border-hover: rgba(0, 0, 0, 0.35);
+  --card-bg-hover: rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: rgba(0, 0, 0, 0.3);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-bg-hover: rgba(255, 255, 255, 0.13);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-highlight: rgba(255, 255, 255, 0.18);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --top-glow-color: rgba(255, 255, 255, 0.22);
+
+  --card-border-hover: rgba(255, 255, 255, 0.4);
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-shadow-hover: rgba(0, 0, 0, 0.9);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ---------- Glass button (Resume) ---------- */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    0 4px 14px var(--glass-shadow);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.glass:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-1px);
+}
+
+/* ---------- Lightish glow at the top of the page ---------- */
+.top-glow {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 360px;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--top-glow-color) 0%,
+    transparent 100%
+  );
+}
+
+/* ---------- Interactive project cards ---------- */
+.project-card {
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    opacity 0.35s ease,
+    filter 0.35s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* The hovered card comes closer and gets sharper */
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: translateY(-6px) scale(1.04);
+    z-index: 20;
+    border-color: var(--card-border-hover);
+    background-color: var(--card-bg-hover);
+    box-shadow: 0 24px 60px -12px var(--card-shadow-hover);
+  }
+
+  /* Every other card in the list steps back */
+  .project-list:hover .project-card:not(:hover):not(:focus-within) {
+    opacity: 0.5;
+    filter: blur(1.5px) saturate(0.85);
+    transform: scale(0.985);
+  }
+}
