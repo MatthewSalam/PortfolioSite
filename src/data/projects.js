@@ -48,7 +48,7 @@ export const projects = [
   {
     slug: "weather",
     title: "Weather App",
-    featured: true,
+    featured: false,
     image: "/projects/weather.png",
     description:
       "A responsive weather app that pulls real-time data from the OpenWeatherMap API for cities worldwide, with dynamic city search, async requests and error handling.",

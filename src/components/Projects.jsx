@@ -13,7 +13,7 @@ export default function Projects() {
           Projects
         </p>
         <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-6xl">
-          Work I&apos;m proud of.
+          Flagship Projects
         </h2>
 
         <div className="project-list mt-16 space-y-8">

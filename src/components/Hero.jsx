@@ -30,7 +30,7 @@ export default function Hero() {
           Developer
         </mark>{" "}
         who loves building fast, clean web applications using{" "}
-        <strong>Next.js</strong>, <strong>React</strong> and other modern
+        <strong>Next.js</strong>, <strong>Python</strong> and other modern
         technologies. I build for startups and teams that actually need to
         ship.
       </p>

@@ -1,8 +1,37 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
 
+const TIME_ZONE = "Africa/Lagos"; // WAT
+
+function useClock() {
+  // Start empty so the server and first client render match (avoids hydration errors).
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      timeZone: TIME_ZONE,
+    });
+
+    const tick = () => setTime(formatter.format(new Date()));
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  return time;
+}
+
 export default function Footer() {
+  const time = useClock();
+
   return (
     <footer className="px-6 pb-10 pt-16">
       <div className="mx-auto max-w-5xl">
@@ -47,8 +76,15 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="mt-10 border-t border-black/10 pt-8 text-center text-sm text-neutral-500 dark:border-white/10">
-          © {new Date().getFullYear()} Matthew Salam
+        <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-black/10 pt-8 text-sm text-neutral-500 sm:flex-row dark:border-white/10">
+          <p>© {new Date().getFullYear()} Matthew Salam</p>
+
+          <p className="font-mono">
+            <time className="inline-block min-w-[8ch] tabular-nums">
+              {time || "--:--:--"}
+            </time>{" "}
+            WAT
+          </p>
         </div>
       </div>
     </footer>
