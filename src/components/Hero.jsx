@@ -1,6 +1,7 @@
 import { ArrowDown, Download, Mail } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
+      import AboutDropdown from "@/components/AboutDropdown";
 
 const DOC_ID = "PASTE_YOUR_GOOGLE_DOC_ID_HERE";
 const RESUME_URL = `https://docs.google.com/document/d/1JjZCE1Xg0f0MleQbNomuqiRxMiw2KqE5ChLig2RxLXU/export?format=pdf`;
@@ -25,22 +26,11 @@ export default function Hero() {
 
       {/* Intro statement */}
       <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-500 md:text-xl">
-        I am a{" "}
-        <mark className="rounded-sm bg-emerald-300 px-1 text-black">
-          Developer
-        </mark>{" "}
-        who loves building fast, clean web applications using{" "}
-        <strong>Next.js</strong>, <strong>Python</strong> and other modern
-        technologies. I build for startups and teams that actually need to
-        ship.
+        I build whatever you can think of and bring your ideas to life. 
       </p>
 
-      <a
-        href="#about"
-        className="mt-6 text-lg text-blue-500 transition hover:underline"
-      >
-        Learn more about me.
-      </a>
+
+      <AboutDropdown />
 
       {/* Buttons */}
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 
+
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
