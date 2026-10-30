@@ -14,7 +14,7 @@ export default function Hero() {
     >
       {/* Role pill */}
       <span className="rounded-lg border px-3 py-1 text-sm text-neutral-500 dark:border-white/15">
-        Developer
+        Full-Stack Developer
       </span>
 
       {/* Name */}

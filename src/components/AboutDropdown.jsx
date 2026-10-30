@@ -32,8 +32,8 @@ export default function AboutDropdown() {
           <div className="max-w-xl space-y-4 text-left text-base leading-relaxed">
             <p>
               I&apos;m a Software Engineering graduate (B.Sc., Adeleke
-              University) and a full-stack developer who loves building
-              practical, end-to-end web applications.
+              University) and a full-stack developer who building
+              practical, scalable end-to-end web applications.
             </p>
 
             <div>
