@@ -58,10 +58,6 @@ export default function AboutDropdown() {
                   full-stack CRUD app with secure authentication and a
                   documented REST API.
                 </li>
-                <li>
-                  <span className="font-medium">Weather App:</span> responsive
-                  real-time weather search powered by OpenWeatherMap.
-                </li>
               </ul>
             </div>
 
