@@ -18,8 +18,11 @@ export const projects = [
       "HMAC",
     ],
     links: [
+      { label: "Live", href: "https://allocatr-ui.vercel.app/" },
       { label: "Frontend", href: "https://github.com/MatthewSalam/allocatr_ui" },
       { label: "Backend", href: "https://github.com/MatthewSalam/allocatr_api" },
+      { label: "API Docs", href: "https://allocatr-api.vercel.app/docs" },
+      { label: "API Docs", href: "https://allocatr-api-1.onrender.com/docs" },
     ],
   },
   {
